@@ -27,15 +27,15 @@ class thread(threading.Thread):
 			stderr=subprocess.PIPE
 		)
 		for i in iter(ret.stdout.readline, b""):
-			l.append(i.decode().strip())
-			print(l)
+			res = i.decode().strip()
+			print(res)
+			l.append(res)
 
 class ServerHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
 	def do_GET(self):
 		global l
 		if self.path == uri:
 			self.wfile.write(l)
-			l = []
 
 if __name__ == '__main__':
 	# New Thread: Get Command Result
