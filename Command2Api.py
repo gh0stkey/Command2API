@@ -35,6 +35,10 @@ class ServerHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
 	def do_GET(self):
 		global l
 		if self.path == uri:
+			self.send_response(200)
+			self.send_header('Content-Type', 'text/plain')
+			self.send_header('Server', 'Nginx')
+			self.end_headers()
 			self.wfile.write(l)
 
 if __name__ == '__main__':
