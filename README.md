@@ -10,9 +10,10 @@
 
 ```shell
 python Command2Api.py "执行的命令" Web运行的端口
+python Command2Api_Py3.py "执行的命令" Web运行的端口 // Python3版本来自noobyan
 ```
 
-接着在命令中会输出对应的URL，替换HOST访问即可获取：
+接着在命令中会输出对应的URL，访问即可获取信息：
 
 ![](images/0.png)
 
